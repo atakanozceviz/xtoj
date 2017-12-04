@@ -13,6 +13,12 @@
 			"path": "github.com/clbanning/mxj",
 			"revision": "8c6bc6de8c4ec6a4e6c56aecab594cf175d816db",
 			"revisionTime": "2017-10-26T12:01:17Z"
+		},
+		{
+			"checksumSHA1": "dkQf3cDrcvk9Z1wJjNt4O2HklyA=",
+			"path": "github.com/unrolled/secure",
+			"revision": "0f73fc7feba662a2ad5ff887fe203af08f8f8716",
+			"revisionTime": "2017-11-02T16:23:50Z"
 		}
 	],
 	"rootPath": "github.com/atakanozceviz/xtoj"
