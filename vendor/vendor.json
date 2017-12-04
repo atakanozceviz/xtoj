@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "dchboodA1bcJC+1qz0wzL21uNNI=",
+			"path": "github.com/clbanning/mxj",
+			"revision": "8c6bc6de8c4ec6a4e6c56aecab594cf175d816db",
+			"revisionTime": "2017-10-26T12:01:17Z"
+		}
+	],
+	"rootPath": "github.com/atakanozceviz/tests/x2j"
+}
