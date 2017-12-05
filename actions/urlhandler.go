@@ -6,10 +6,10 @@ import (
 	"net/http"
 
 	"github.com/clbanning/mxj"
+	"github.com/go-chi/render"
 )
 
 func urlHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
 	u := r.FormValue("url")
 	if u == "" {
 		io.WriteString(w, "url query string parameter can not be empty")
@@ -35,11 +35,5 @@ func urlHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	js, err := mapVal.Json()
-	if err != nil {
-		io.WriteString(w, err.Error())
-		return
-	}
-
-	w.Write(js)
+	render.JSON(w, r, mapVal)
 }

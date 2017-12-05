@@ -6,10 +6,10 @@ import (
 	"net/http"
 
 	"github.com/clbanning/mxj"
+	"github.com/go-chi/render"
 )
 
 func postHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
 	xml, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		io.WriteString(w, err.Error())
@@ -28,11 +28,5 @@ func postHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	js, err := mapVal.Json()
-	if err != nil {
-		io.WriteString(w, err.Error())
-		return
-	}
-
-	w.Write(js)
+	render.JSON(w, r, mapVal)
 }

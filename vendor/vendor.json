@@ -27,6 +27,12 @@
 			"revisionTime": "2017-11-20T15:19:03Z"
 		},
 		{
+			"checksumSHA1": "0IpBuJDSR8nLXq9EvHlSy946KNs=",
+			"path": "github.com/go-chi/render",
+			"revision": "7bbdb19f4016118d23bc31d6d33dc1dd517c6b2e",
+			"revisionTime": "2017-10-23T21:40:46Z"
+		},
+		{
 			"checksumSHA1": "dkQf3cDrcvk9Z1wJjNt4O2HklyA=",
 			"path": "github.com/unrolled/secure",
 			"revision": "0f73fc7feba662a2ad5ff887fe203af08f8f8716",
