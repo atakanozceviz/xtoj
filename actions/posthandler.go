@@ -9,6 +9,7 @@ import (
 )
 
 func postHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 	xml, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		io.WriteString(w, err.Error())

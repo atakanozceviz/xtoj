@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/middleware"
 	"github.com/unrolled/secure"
 )
 
@@ -12,8 +13,11 @@ func Start(port string) error {
 		SSLRedirect:     true,
 		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
 	})
+
 	r := chi.NewRouter()
 	r.Use(secureMiddleware.Handler)
+	r.Use(middleware.Compress(9))
+
 	r.Get("/", urlHandler)
 	r.Post("/", postHandler)
 
