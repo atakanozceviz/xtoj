@@ -12,7 +12,7 @@ func urlHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	u := r.FormValue("url")
 	if u == "" {
-		io.WriteString(w, "url value can not be empty")
+		io.WriteString(w, "url query string parameter can not be empty")
 		return
 	}
 
