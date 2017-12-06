@@ -4,9 +4,6 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
-
-	"github.com/clbanning/mxj"
-	"github.com/go-chi/render"
 )
 
 func urlHandler(w http.ResponseWriter, r *http.Request) {
@@ -22,18 +19,11 @@ func urlHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	xml, err := ioutil.ReadAll(resp.Body)
+	data, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		io.WriteString(w, err.Error())
 		return
 	}
 	defer resp.Body.Close()
-
-	mapVal, err := mxj.NewMapXml(xml, true)
-	if err != nil {
-		io.WriteString(w, err.Error())
-		return
-	}
-
-	render.JSON(w, r, mapVal)
+	convert(data, w, r)
 }
