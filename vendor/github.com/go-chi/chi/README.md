@@ -232,7 +232,7 @@ type Router interface {
 }
 
 // Routes interface adds two methods for router traversal, which is also
-// used by the `docgen` subpackage to generation documentation for Routers.
+// used by the github.com/go-chi/docgen package to generate documentation for Routers.
 type Routes interface {
 	// Routes returns the routing tree in an easily traversable structure.
 	Routes() []Route
@@ -318,7 +318,7 @@ with `net/http` can be used with chi's mux.
 ### Core middlewares
 
 -----------------------------------------------------------------------------------------------------------
-| chi/middlware Handler | description                                                                     |
+| chi/middleware Handler | description                                                                     |
 |:----------------------|:---------------------------------------------------------------------------------
 | AllowContentType      | Explicit whitelist of accepted request Content-Types                            |
 | Compress              | Gzip compression for clients that accept compressed responses                   |

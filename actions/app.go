@@ -16,6 +16,7 @@ func Start(port string) error {
 
 	r := chi.NewRouter()
 	r.Use(secureMiddleware.Handler)
+	r.Use(middleware.Recoverer)
 	r.Use(middleware.Compress(9))
 
 	r.Get("/", urlHandler)

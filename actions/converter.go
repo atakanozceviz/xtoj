@@ -1,7 +1,6 @@
 package actions
 
 import (
-	"io"
 	"net/http"
 
 	"github.com/clbanning/mxj"
@@ -15,12 +14,12 @@ func convert(data []byte, w http.ResponseWriter, r *http.Request) {
 		// try json to xml
 		jsonMap, jsonErr := mxj.NewMapJson(data)
 		if jsonErr != nil {
-			io.WriteString(w, xmlErr.Error()+"\n"+jsonErr.Error())
+			render.PlainText(w, r, xmlErr.Error()+"\n"+jsonErr.Error())
 			return
 		}
 		xmlVal, err := jsonMap.Xml()
 		if err != nil {
-			io.WriteString(w, err.Error())
+			render.PlainText(w, r, err.Error())
 			return
 		}
 		w.Header().Set("Content-Type", "application/rss+xml")
