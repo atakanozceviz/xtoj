@@ -1,11 +1,11 @@
 module github.com/atakanozceviz/xtoj
 
+go 1.13
+
 require (
-	github.com/clbanning/mxj v1.8.3
-	github.com/codegangsta/negroni v1.0.0 // indirect
-	github.com/go-chi/chi v3.3.3+incompatible
+	github.com/clbanning/mxj v1.8.4
+	github.com/go-chi/chi v4.0.3+incompatible
 	github.com/go-chi/render v1.0.1
-	github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606
-	golang.org/x/net v0.0.0-20181029044818-c44066c5c816 // indirect
-	golang.org/x/text v0.3.0 // indirect
+	github.com/unrolled/secure v1.0.7
+	golang.org/x/net v0.0.0-20200226051749-491c5fce7268 // indirect
 )
